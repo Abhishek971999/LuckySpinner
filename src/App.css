@@ -24,6 +24,9 @@ body{
   border: none;
   outline: none;
   cursor: pointer;
+  box-shadow: inset 0px -4px 0px 2px #E6C48A;
+    font-weight: 600;
+
 }
 /* .button-container button div{
   height: 50px;
@@ -62,6 +65,17 @@ body{
     transform: rotate(-90deg);
     display: inline-block;
     font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .question{
+    text-align: center;
+
+  }
+  .question span{
+    color: #FBAF03;
   }
 li:first-child .circle-section{
 background:#832A4B;
@@ -171,6 +185,8 @@ li:nth-child(12) .circle-section{
    position: relative;
    list-style: none;
    overflow: hidden;
+   box-shadow: 1px 0px 0px 5px #D6D6D3;
+
   }
 
   li{
@@ -221,8 +237,8 @@ li:nth-child(12) .circle-section{
 
 
   .stop-rotating{
-    /* animation-play-state: paused; */
-    animation: end-rotate 3s linear;
+    animation-play-state: paused;
+    /* animation: end-rotate 3s linear; */
   }
   @keyframes end-rotate{
     0%{transform: rotate(0deg);}
