@@ -96,8 +96,8 @@ li:nth-child(12) {
 }
 
 .circle{
-    width: 20em; 
-    height: 20em; 
+    width: 18em; 
+    height: 18em; 
     border: 1px solid black;
     margin:1em auto;
     padding:0;
@@ -155,7 +155,6 @@ li{
     }
 }
 
-
 .stop-rotating{
 animation-play-state: paused;
 }
@@ -200,7 +199,7 @@ animation-play-state: paused;
 
 .button-container{
     position: absolute;
-    top: 10em;
+    top: 9em;
     left: 50%;
     transform: translate(-50%,-30px);
     z-index: 1;

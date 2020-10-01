@@ -10,3 +10,7 @@ body{
   position: relative;
   max-width: 500px;
 }
+
+.powerbar-container{
+  text-align: center;
+}
