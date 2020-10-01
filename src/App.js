@@ -1,6 +1,7 @@
-import React,{Fragment} from 'react';
+import React from 'react';
+import Spinner from './components/Spinner/Spinner'
+import SpinnerMessage from './components/SpinnerMessage/SpinnerMessage'
 import './App.css';
-import money from './Vector.png'
 import { GoogleSpreadsheet } from "google-spreadsheet";
 const SPREADSHEET_ID = "1AlswlDtP6DQDDuVwAfgKdG0fxfIVSOpCKi_ZzmOP3_U";
 const SHEET_ID = "0";
@@ -18,9 +19,7 @@ class App extends React.Component{
         client_email: CLIENT_EMAIL,
         private_key: PRIVATE_KEY,
       });
-      // loads document properties and worksheets
       await doc.loadInfo();
-  
       const sheet = doc.sheetsById[SHEET_ID];
       const result = await sheet.addRow(row);
       console.log(result)
@@ -28,57 +27,12 @@ class App extends React.Component{
       console.error('Error: ', e);
     }
   };
-  
-  RotateSpinner = ()=>{
-    this.setState({spinnerState:"circle start-rotating"});
-    setTimeout(()=>{
-      this.setState({spinnerState:"circle start-rotating stop-rotating"});
-      const res = this.checkValue()
-      this.appendSpreadsheet({ web_client: "pwa", timestamp: "2020-10-14T18:40:16.092Z",spin_result_index:res })
-    },Math.floor(Math.random()*10000+1))
-  }
-
-  checkValue = ()=>{
-    const elements = document.querySelectorAll(".circle-section")
-    let max = 0;
-    let element = undefined;
-    elements.forEach(function(elem) {
-    if(elem.getBoundingClientRect().left>max){
-      max = elem.getBoundingClientRect().left
-      element = elem.childNodes[0].id
-    }
-    });
-    return element
-  }
   render(){
     return (
-    <Fragment>
-    <div className="SpinnerSection">
-      <div className="arrow"></div>
-      <div className="button-container"><button onClick={this.RotateSpinner}>SPIN</button></div>
-      <ul className={this.state.spinnerState}>
-        <li><div className="circle-section"><span className="circle-span" id="1">Better luck <br/> next time!</span></div></li>
-        <li><div className="circle-section"><span className="circle-span" id="2">2x <br/> Savings</span></div></li>
-        <li><div className="circle-section"><span className="circle-span" id="3">100% <br/> Cashback</span></div></li>
-        <li><div className="circle-section"><span className="circle-span" id="4">&#x20B9; 20<img src={money} alt=""/></span></div></li>
-        <li><div className="circle-section"><span className="circle-span " id="5">&#x20B9; 50<img src={money} alt=""/></span></div></li>
-        <li><div className="circle-section"><span className="circle-span " id="6">1.5x <br/> Savings</span></div></li>
-        <li><div className="circle-section"><span className="circle-span" id="7">2x <br/> Savings</span></div></li>
-        <li><div className="circle-section"><span className="circle-span" id="8">Better luck <br/> next time!</span></div></li>
-        <li><div className="circle-section"><span className="circle-span" id="9">&#x20B9; 20<img src={money} alt=""/></span></div></li>
-        <li><div className="circle-section"><span className="circle-span" id="10">75% <br/> Cashback</span></div></li>
-        <li><div className="circle-section"><span className="circle-span" id="11">&#x20B9; 50<img src={money} alt=""/></span></div></li>
-        <li><div className="circle-section"><span className="circle-span" id="12">3x <br/> Savings</span></div></li>
-      </ul>
-      <div className="spin-message-div">
-      <h1>Spin the wheel now and get rewarded</h1>
-      <p>Tap on Spin or rotate the wheel anti-clockwise direction and release to start spinning</p>
-    </div>
-    <p className="question">Have a question?<span className="helplink"> Get help</span></p>
-
-    </div>
-    
-    </Fragment>
+      <div className="SpinnerSection">
+        <Spinner />
+        <SpinnerMessage />
+      </div>
   );
   }
 }
