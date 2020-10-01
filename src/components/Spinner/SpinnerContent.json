@@ -1,3 +1,57 @@
 [
-    
+    {
+        "id":1,
+        "name":"Better luck <br/> next time!",
+        "img":null
+    },
+    {
+        "id":2,
+        "name":"2x <br/> Savings",
+        "img":null
+    },
+    {
+        "id":3,
+        "name":"100% <br/> Cashback",
+        "img":"money"
+    },
+    {
+        "id":4,
+        "name":"&#x20B9; 20",
+        "img":"money"
+    },
+    {
+        "id":5,
+        "name":"&#x20B9; 50",
+        "img":"money"
+    },
+    {
+        "id":6,
+        "name":"1.5x <br/> Savings",
+        "img":null
+    },
+    {
+        "id":7,
+        "name":"2x <br/> Savings",
+        "img":"money"
+    },
+    {
+        "id":8,
+        "name":"Better luck <br/> next time!",
+        "img":null
+    },
+    {
+        "id":9,
+        "name":"75% <br/> Cashback",
+        "img":null
+    },
+    {
+        "id":10,
+        "name":"&#x20B9; 50",
+        "img":null
+    },
+    {
+        "id":11,
+        "name":"3x <br/> Savings",
+        "img":null
+    }
 ]
